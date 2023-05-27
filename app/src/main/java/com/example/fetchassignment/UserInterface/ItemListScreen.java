@@ -232,8 +232,6 @@ public class ItemListScreen extends AppCompatActivity {
         if(found == false){
             pleaseTxt.setText("*Please enter 1 - 4*");
 
-            items = repository.getFilteredItems();
-            adapter.setItems(items);
 
             Animation anim = new AlphaAnimation(0.0f, 1.0f);
             anim.setDuration(150); //You can manage the blinking time with this parameter
