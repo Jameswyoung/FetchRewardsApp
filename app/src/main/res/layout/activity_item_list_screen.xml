@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ItemListScreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UserInterface.ItemListScreen">
@@ -20,55 +21,94 @@
         android:minHeight="50dp"
         android:progress="1"
         android:progressTint="#FF9800"
-        app:layout_constraintBottom_toBottomOf="@+id/itemListRecyclerView"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/itemRecycler"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="invisible" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/runningDog"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/runningdog"
         android:visibility="invisible"
-        tools:visibility="visible"
-        />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/itemListRecyclerView"
+        android:id="@+id/itemRecycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="120dp"
         android:layout_marginBottom="10dp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-       />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/searchTxt"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="20dp"
         android:backgroundTint="#FF9800"
         android:ems="10"
         android:fontFamily="@font/press_start_2p"
         android:foregroundTint="#FF9800"
         android:hint="Search by list ID"
         android:inputType="textEmailAddress"
-        android:textColor="#FF9800"
+        android:textColor="#673AB7"
         android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/itemListRecyclerView"
+        app:layout_constraintBottom_toBottomOf="@+id/searchBttn"
+        app:layout_constraintEnd_toStartOf="@+id/searchBttn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/searchBttn" />
 
-    <Button
+    <ImageButton
         android:id="@+id/searchBttn"
+        android:layout_width="118dp"
+        android:layout_height="47dp"
+        android:layout_marginEnd="20dp"
+        android:background="#00000000"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        app:layout_constraintBottom_toTopOf="@+id/itemRecycler"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/searchbttn_foreground" />
+
+    <TextView
+        android:id="@+id/dogText"
+        android:layout_width="118dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/press_start_2p"
+        android:text="Please wait while I fetch your Items!"
+        android:textColor="#FF9800"
+        android:textSize="11sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/runningDog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/runningDog"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/pleaseTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
         android:fontFamily="@font/press_start_2p"
-        android:text="SEARCH"
-        android:textSize="11sp"
-        app:layout_constraintBottom_toTopOf="@+id/itemListRecyclerView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/searchTxt"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="#FF9800"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/itemRecycler"
+        app:layout_constraintEnd_toEndOf="@+id/searchTxt"
+        app:layout_constraintStart_toStartOf="@+id/searchTxt"
+        app:layout_constraintTop_toBottomOf="@+id/searchTxt" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

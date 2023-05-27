@@ -14,7 +14,7 @@ public class Repository {
     private ItemDAO mItemDAO;
 
     private List<Item> mAllItems;
-    private List<Item> mFiftyItems;
+    private List<Item> mFilteredItems;
 
     private static int NUMBER_OF_THREADS = 4;
 
@@ -36,17 +36,62 @@ public class Repository {
         }
         return mAllItems;
     }
-    public List<Item> getFiftyItems(){
-        databaseExecutor.execute(()->{
-            mAllItems = mItemDAO.getFiftyItems();
+    public List<Item> getFilteredItems(){
+        databaseExecutor.execute(()-> {
+            mFilteredItems = mItemDAO.getFilteredItems();
         });
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        return mFiftyItems;
+        return mFilteredItems;
     }
+public List<Item> getListID4Items(){
+        databaseExecutor.execute(()-> {
+            mFilteredItems = mItemDAO.getListID4Items();
+        });
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        return mFilteredItems;
+    }
+public List<Item> getListID3Items(){
+        databaseExecutor.execute(()-> {
+            mFilteredItems = mItemDAO.getListID3Items();
+        });
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        return mFilteredItems;
+    }
+public List<Item> getListID2Items(){
+        databaseExecutor.execute(()-> {
+            mFilteredItems = mItemDAO.getListID2Items();
+        });
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        return mFilteredItems;
+    }
+public List<Item> getListID1Items(){
+        databaseExecutor.execute(()-> {
+            mFilteredItems = mItemDAO.getListID1Items();
+        });
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        return mFilteredItems;
+    }
+
     public void insert(Item item){
         databaseExecutor.execute(()->{
             mItemDAO.insert(item);

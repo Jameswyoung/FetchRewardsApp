@@ -61,7 +61,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         if (mItems != null){
             Item current = mItems.get(position);
             String id = String.valueOf(current.getId());
-            String listID = String.valueOf(current.getId());
+            String listID = String.valueOf(current.getListId());
             String name = current.getName();
             holder.itemItemView.setText("ID: " + id + "\n" + "LIST ID: " + listID +"\n" +  "NAME: " + name+ "\n");
 

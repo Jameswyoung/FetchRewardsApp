@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="80dp"
         android:fontFamily="@font/press_start_2p"
         android:text="PASSWORD:"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
@@ -47,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="80dp"
         android:backgroundTint="#673AB7"
         android:drawableTint="#673AB7"
         android:ems="10"
@@ -113,18 +113,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
+
     <ImageButton
         android:id="@+id/loginBttn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_width="118dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="60dp"
         android:background="#00000000"
-        android:scaleX="2.5"
-        android:scaleY="2.5"
+        android:scaleX="3"
+        android:scaleY="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/dogbonelogin_round" />
+        app:srcCompat="@mipmap/dogbone_foreground" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

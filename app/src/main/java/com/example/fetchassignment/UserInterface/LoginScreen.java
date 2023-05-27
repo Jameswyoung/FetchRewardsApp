@@ -28,8 +28,8 @@ public class LoginScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Repository repository = new Repository(getApplication());
-        //currently, the database is cleared on login so that we can test downloading the file.
-        repository.clearAll();
+        //The database can be cleared on login so that we can test the downloading of the file.
+        //repository.clearAll();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
@@ -37,13 +37,15 @@ public class LoginScreen extends AppCompatActivity {
         EditText username = findViewById(R.id.usernameTxt);
         EditText password = findViewById(R.id.passwordTxt);
         TextView wolfTxt = findViewById(R.id.wolfTxt);
+        //This ClickListener is for the login button. If the username and password are correct the user enters the ItemList screen
+        //If the username or password is incorrect and animation occurs next to the running dog gif that says "Try Again!"
         lBttn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //if (username.getText().toString().equals("Fetch") & password.getText().toString().equals("Rewards")) {
+                if (username.getText().toString().equals("Fetch") & password.getText().toString().equals("Rewards")) {
                     Intent intent = new Intent(LoginScreen.this, ItemListScreen.class);
                     startActivity(intent);
-                /*} else {
+                } else {
 
                         wolfTxt.setText("TRY AGAIN!");
                     Animation anim = new AlphaAnimation(0.0f, 1.0f);
@@ -59,7 +61,7 @@ public class LoginScreen extends AppCompatActivity {
                                 wolfTxt.setText("");
                             }
                         }, 2500);
-                }*/
+                }
             }
         });
     }

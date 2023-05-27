@@ -15,10 +15,8 @@
 
         <activity
             android:name=".UserInterface.ItemListScreen"
-            android:exported="false" />
-        <activity
-            android:name=".UserInterface.MainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".UserInterface.LoginScreen"/>
         <activity
             android:name=".UserInterface.LoginScreen"
             android:exported="true">

@@ -10,7 +10,7 @@ import androidx.room.RoomDatabase;
 import com.example.fetchassignment.DAO.ItemDAO;
 import com.example.fetchassignment.Entity.Item;
 
-@Database(entities = {Item.class}, version = 1, exportSchema = false)
+@Database(entities = {Item.class}, version = 2, exportSchema = false)
 
 public abstract class FetchDatabaseBuilder extends RoomDatabase{
     public abstract ItemDAO itemDAO();
